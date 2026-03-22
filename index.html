@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tribe Enforcer Command Generator</title>
+    <title>ARKLegendsPVE Tribe Enforcer</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #1a1a1a; color: #e0e0e0; padding: 20px; line-height: 1.5; }
         .container { max-width: 950px; margin: auto; background: #2d2d2d; padding: 25px; border-radius: 8px; border: 1px solid #444; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
@@ -17,11 +17,10 @@
         button:hover { background: #e67e22; }
         .output-box { background: #111; border: 1px dashed #f39c12; padding: 10px; margin-top: 10px; font-family: monospace; display: flex; justify-content: space-between; align-items: center; word-break: break-all; }
         .copy-btn { background: #444; color: #fff; font-size: 0.8em; padding: 5px 10px; margin-left: 10px; flex-shrink: 0; }
-        .note { font-size: 0.85em; color: #aaa; margin-top: 5px; font-style: italic; }
         
         /* Layout Grids */
-        .info-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; margin-top: 20px; }
-        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .faq-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
         .faq-card { background: #252525; padding: 12px; border-radius: 5px; border: 1px solid #333; }
         .faq-card h4 { color: #f39c12; margin: 0 0 8px 0; text-decoration: underline; font-size: 0.95em; }
         .faq-card ul { padding-left: 18px; margin: 0; }
@@ -31,13 +30,13 @@
         th { text-align: left; color: #f39c12; padding: 10px; border-bottom: 2px solid #444; }
         td { padding: 10px; border-bottom: 1px solid #333; vertical-align: top; }
 
-        @media (max-width: 850px) { .info-grid { grid-template-columns: 1fr; } .faq-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 850px) { .info-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Tribe Enforcer</h1>
+    <h1>ARKLegendsPVE Tribe Enforcer</h1>
 
     <div class="section">
         <h3>Add Player to Tribe (Permanent)</h3>
@@ -87,14 +86,7 @@
             <h2>Frequently Asked Questions</h2>
             <div class="faq-grid">
                 <div class="faq-card">
-                    <h4>Admin Duties</h4>
-                    <ul>
-                        <li><strong>Temp Join:</strong> Use standard force join. Relogging or transferring reverts you to your original tribe.</li>
-                        <li><strong>Move Assets:</strong> Use <code>GiveToTribe</code>. Members don't need to be online.</li>
-                    </ul>
-                </div>
-                <div class="faq-card">
-                    <h4>Installation</h4>
+                    <h4>Installation & Setup</h4>
                     <ul>
                         <li>Owner logs in first on all maps to auto-create entries.</li>
                         <li>Verify asset consolidation before inviting members back.</li>
@@ -107,11 +99,11 @@
                     </ul>
                 </div>
                 <div class="faq-card">
-                    <h4>Fixing Players</h4>
+                    <h4>Fixing Player Bugs</h4>
                     <ul>
-                        <li><strong>1:</strong> Relog player.</li>
-                        <li><strong>2:</strong> Use <code>AddPlayer</code> if not in DB.</li>
-                        <li><strong>3:</strong> Use <code>FixTribe</code> if file is corrupt.</li>
+                        <li><strong>Step 1:</strong> Have the player relog.</li>
+                        <li><strong>Step 2:</strong> Use <code>AddPlayer</code> if they are missing from the database.</li>
+                        <li><strong>Step 3:</strong> Use <code>FixTribe</code> if the file remains corrupted.</li>
                     </ul>
                 </div>
             </div>
@@ -121,7 +113,7 @@
             <h2>ID Discovery Guide</h2>
             <table>
                 <thead>
-                    <tr><th>Find</th><th>Command/Method</th></tr>
+                    <tr><th>Target</th><th>Method</th></tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -143,7 +135,7 @@
                 </tbody>
             </table>
             <div class="section" style="margin-top: 15px; border-left: 5px solid #e74c3c;">
-                <h3>System</h3>
+                <h3>System Utils</h3>
                 <div class="output-box" id="outReload">TribeEnforcerAscended.Reload
                     <button class="copy-btn" onclick="copyText('outReload')">Copy</button>
                 </div>
